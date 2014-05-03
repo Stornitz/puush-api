@@ -4,11 +4,12 @@ define('puush', '');
 require_once 'config.php';
 require_once 'func.php';
 
-// ?
+// API Key
 $k = get_post_var('k');
-
-// ?
-$c = get_post_var('c');
+if($k != API_KEY)
+{
+	exit ('ERR Authentification failed.');
+}
 
 // Check for the file
 if (!isset($_FILES['f']))
