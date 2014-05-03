@@ -42,7 +42,7 @@ if(inTwitterRange($_SERVER["REMOTE_ADDR"], $TwitterIPs))
     <meta name="twitter:image" content="<?= sprintf(FORMATTED_URL, $imageName) ?>">
     <meta name="twitter:image:width" content="<?php echo $size[1]; ?>">
     <meta name="twitter:image:height" content="<?php echo $size[0]; ?>">
-    <meta name="twitter:domain" content="<?= sprintf(FORMATTED_URL, $image) ?>">
+    <meta name="twitter:domain" content="<?= sprintf(FORMATTED_URL, $imageName) ?>">
 <?php
     exit;
 }
