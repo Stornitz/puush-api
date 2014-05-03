@@ -27,6 +27,26 @@ $matched = $matched[0];
 // Get the extension
 $ext = strtolower(get_ext($matched));
 
+// If the IP belong to twitter, show metadata
+if(inTwitterRange($_SERVER["REMOTE_ADDR"], $TwitterIPs))
+{
+    $size = getimagesize($matched);
+    $imageName = $image.".".$ext;
+
+    // Twitter Meta Data for tweets
+?>
+    <meta name="twitter:card" content="photo">
+    <meta name="twitter:site" content="<?= $TwitterMetaData['site'] ?>">
+    <meta name="twitter:creator" content="<?= $TwitterMetaData['creator'] ?>">
+    <meta name="twitter:title" content="<?= $TwitterMetaData['title'] ?>">
+    <meta name="twitter:image" content="<?= sprintf(FORMATTED_URL, $imageName) ?>">
+    <meta name="twitter:image:width" content="<?php echo $size[1]; ?>">
+    <meta name="twitter:image:height" content="<?php echo $size[0]; ?>">
+    <meta name="twitter:domain" content="<?= sprintf(FORMATTED_URL, $image) ?>">
+<?php
+    exit;
+}
+
 // Look for an appropriate mime type
 $mime = array_search($ext, $mime);
 

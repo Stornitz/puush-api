@@ -90,3 +90,15 @@ function validate_image($image)
     // It is good
     return TRUE;
 }
+
+function inTwitterRange($ip, $TwitterIps)
+{
+    $ip_long = ip2long($ip);
+    
+    foreach($TwitterIps AS $long) {
+        if(ip2long($long[0]) <= $ip_long && $ip_long <= ip2long($long[1])) {
+            return true;
+        }
+    }
+    return false;
+}
