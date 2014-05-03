@@ -34,10 +34,13 @@ $image_whitelist = array('jpg', 'jpeg', 'png', 'gif','bmp');
 
 $TwitterMetaData = array('site' => '@Account',
                         'creator' => '@Account',
-                        'title' => 'Screenshoot')
+                        'title' => 'Screenshoot');
 
 // From http://whois.arin.net/rest/org/TWITT/nets
 $TwitterIPs = Array(Array("199.96.56.0", "199.96.63.255"),
                     Array("199.59.148.0", "199.59.151.255"),
                     Array("199.16.156.0", "199.16.159.255"),
                     Array("192.133.76.0", "192.133.79.255"));
+
+// Your login & password encrypted, you can use http://yourwebsite/auth.php?l=___&pwd=___
+$Accounts = array('___');
