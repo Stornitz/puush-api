@@ -1,0 +1,37 @@
+# 404
+ErrorDocument 404 /index.php?e404
+
+RewriteEngine on
+
+# Upload
+RewriteCond %{REQUEST_URI} "^/api/up"
+RewriteRule (.*) /upload.php [L]
+
+# Auth
+RewriteCond %{REQUEST_URI} "^/api/auth"
+RewriteRule (.*) /auth.php [L]
+
+# History
+RewriteCond %{REQUEST_URI} "^/api/hist"
+RewriteRule (.*) /history.php [L]
+
+# Delete from puush
+RewriteCond %{REQUEST_URI} "^/api/del"
+RewriteRule (.*) /history.php?del=1 [L]
+
+# Thumb
+RewriteCond %{REQUEST_URI} "^/api/thumb"
+RewriteRule (.*) /thumb.php [L]
+
+# View
+RewriteCond %{REQUEST_URI} "^/([a-zA-Z0-9]+)$"
+RewriteRule (.*) "/view.php?image=$1"
+
+# Direct link
+RewriteCond %{REQUEST_URI} "^/([a-zA-Z0-9]+\.(jpe?g|png|gif|bmp))$"
+RewriteRule (.*) "/uploads/$1"
+#RewriteRule (.*) "/view.php?image=$1"
+
+# Thumb - Twitter
+RewriteCond %{REQUEST_URI} "^/(([a-zA-Z0-9]+)\.(jpe?g|png|gif|bmp))/twitter$"
+RewriteRule (.*) /thumb.php?twitter=1 [L]
