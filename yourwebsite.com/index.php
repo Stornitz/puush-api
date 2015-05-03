@@ -1,6 +1,8 @@
 <?php
 require_once('site_config.php');
 require_once('function.php');
+require_once($path_to_puushme_dir . 'function.php');
+
 
 if(!empty($_GET['image'])) {
 
