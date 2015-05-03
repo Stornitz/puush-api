@@ -4,7 +4,7 @@ require_once 'func.php';
 require_once 'function.php';
 
 $k = get_post_var('k');
-if(!array_key_exists($k, $upload_dir))
+if(!array_key_exists($k, $upload_dirs))
 {
 	exit ('ERR Invalid account');
 }
