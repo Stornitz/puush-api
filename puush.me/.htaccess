@@ -30,7 +30,6 @@ RewriteRule (.*) "/view.php?image=$1"
 # Direct link
 RewriteCond %{REQUEST_URI} "^/([a-zA-Z0-9]+\.(jpe?g|png|gif|bmp))$"
 RewriteRule (.*) "/uploads/$1"
-#RewriteRule (.*) "/view.php?image=$1"
 
 # Thumb - Twitter
 RewriteCond %{REQUEST_URI} "^/(([a-zA-Z0-9]+)\.(jpe?g|png|gif|bmp))/twitter$"
